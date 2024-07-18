@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section>
+    {% for item in landing_banner %}
+    <div class="w-screen bg-gray-200" style="border: 1px solid;">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-2 gap-x-20 gap-y-4">
+                <div class="col-span-1 p-20 flex flex-col justify-center">
+                    <h1 class="text-4xl text-center mb-4 font-bold">{{ item.title }}</h1>
+                    <div class="text-lg text-center">
+                        <p>
+                            {{ item.description }}
+                        </p>
+                    </div>
+                    <div class="flex justify-center mt-6">
+                        <a href="#" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded transition-colors duration-300 ease-in-out">
+                            Contact
+                                        Us
+                        </a>
+                    </div>
+                </div>
+                <div class="col-span-1 p-4">
+                    <div class="rightsymbolbg" style="min-height: 300px;background: url({% static item.image %}) no-repeat;
+                                width: 100%;
+                                height: 100%;">
+                        This is a primary alert—check it out!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+<section>
+    <div class="flex mx-4 justify-center">
+        <div class="w-10/12">
+            <div class="flex">
+                {% for item in service_list%}
+                <div class="w-1/4 flex flex-col items-center p-4">
+                    <img src="{% static 'images/MSR-Amit_1400x788-v3-1blog_0iXIfdU.gif' %}" class="w-full h-20 object-contain" alt="Web Design">
+                    <img src="{% static item.image %}" class="w-full h-20 object-contain" alt="Web Design">
+                    <h4 class="text-xl font-bold m-4">{{item.title}}</h4>
+                    <p>
+                        {{item.description}}
+                    </p>
+                </div>
+                {%endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    {%for item in  why_buggy_cloud  %}
+    <div class="w-full bg-gray-200">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-2 gap-0 justify-center p-30">
+                <div class="col-span-1 flex justify-center items-center">
+                    <img src="/assets/images/cover_picture.gif" class="w-500 rounded-lg" alt="Image">
+                </div>
+                <div class="col-span-1 p-10">
+                    <h3 class="text-center text-2xl font-bold mb-4">{{item.title}}</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        {{item.description}}
+                    </p>
+                    <div class="flex justify-center mt-4">
+                        <div class="mt-4">
+                            <ul id="bullet-points" class="list-disc list-inside text-gray-700">
+                                <!-- Bullet points will be dynamically added here -->
+                                <li>Graphic Design</li>
+                                <li>SEO &amp; SEM</li>
+                                <li>Technology Support</li>
+                                <li>Web Design</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Why BuggyCloud?</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+<section>
+    <div class="flex flex-wrap -mx-6 justify-center items-center">
+        {% for item in front_blog %}
+        <div class="max-w-sm rounded overflow-hidden shadow-lg m-6">
+            <div class="card relative">
+                <img class="w-full" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/pasta.jpg" alt="Bologna">
+                <a href="#" class="absolute top-4 left-4 bg-white text-gray-800 py-1 px-2 text-sm rounded">{{item.subtitle}}</a>
+                <div class="p-4">
+                    <h4 class="font-bold text-xl mb-2">{{item.title}}</h4>
+                    <p class="text-gray-700 mb-4">{{item.description}}</p>
+                    <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Read Technology</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<div class="horizontal_line_padding mb-6 col-md-12">
+    <div class="outer_horizontal_line col-md-12">
+        <div class="inner_horizontal_line"></div>
+    </div>
+</div>
+<section>
+    <div class="w-screen bg-gray-200 flex justify-center items-center">
+        <div class="container mx-auto p-10">
+            <div class="grid grid-cols-2 md:grid-cols-2">
+                <div class="col-span-1">
+                    <h3 class="text-center font-bold text-5xl mb-4">Expand your Business with BuggyCloud</h3>
+                    <p class="text-gray-700 text-right font-semibold">
+                        Experience the power of BuggyCloud and embark on a transformative journey to expand your
+                        business, unlock new opportunities, and achieve unprecedented success. With our innovative solutions
+                        and
+                        unrivaled support, we empower you to unleash your business's full potential, seize growth
+                        opportunities, and stay ahead in today's competitive landscape. Discover a world of
+                        possibilities and elevate your business to new heights with BuggyCloud.
+                        It usually begins with:
+                    </p>
+                    <div class="mt-4 text-right">
+                        <ul class="list-disc list-inside">
+                            <li class="text-gray-600">Scalability</li>
+                            <li class="text-gray-600">Efficiency</li>
+                            <li class="text-gray-600">Innovation</li>
+                            <li class="text-gray-600">Reliability</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid-cols-3 flex justify-center ml-20">
+                    <div class="rounded shadow-lg">
+                        <div class="relative">
+                            <img class="w-full rounded shadow-lg" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/pasta.jpg" alt="Bologna">
+                            <a href="#" class="absolute top-4 left-4 bg-white text-gray-800 py-1 px-2 text-sm rounded">Creativity</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--another card start -->
+            <div class="grid grid-cols-2 md:grid-cols-2 mt-40">
+                <div class="grid-cols-3 flex justify-center mr-20">
+                    <div class="rounded shadow-lg">
+                        <div class="relative">
+                            <img class="w-full rounded shadow-lg" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/pasta.jpg" alt="Bologna">
+                            <a href="#" class="absolute top-4 left-4 bg-white text-gray-800 py-1 px-2 text-sm rounded">Expertise</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1">
+                    <h3 class="text-center font-bold text-5xl mb-4">Let our experts build your website</h3>
+                    <p class="text-gray-700 font-semibold">
+                        We have a team of skilled web developers and designers who are ready to create a stunning and
+                        functional website tailored to your specific needs. From crafting visually appealing designs
+                        to implementing seamless user experiences, we'll ensure that your website stands out and
+                        delivers exceptional results.
+                    </p>
+                    <div class="text-left mt-4">
+                        <ul class="list-disc pl-4">
+                            <li class="text-gray-600">Customized designs that align with your brand identity</li>
+                            <li class="text-gray-600">
+                                Responsive and mobile-friendly layouts for optimal viewing across
+                                devices
+                            </li>
+                            <li class="text-gray-600">User-friendly navigation and intuitive interfaces</li>
+                            <li class="text-gray-600">Integration of essential features and functionalities</li>
+                            <li class="text-gray-600">
+                                Search engine optimization (SEO) to improve visibility and organic
+                                traffic
+                            </li>
+                            <li class="text-gray-600">Ongoing support and maintenance to keep your website up-to-date</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <p class="text-gray-700 font-semibold">
+                        Don't settle for anything less than a professionally built website. Let our experts handle the
+                        technical aspects while you focus on growing your business. Contact us today and take the first
+                        step towards an impressive online presence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

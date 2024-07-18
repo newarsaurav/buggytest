@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div style="display: flex;justify-content: space-evenly
+        ;">
+            <div style="width: 40%;">
+                <h1>Custom Dashboard Page</h1>
+                <h2>HomePageEdits</h2>
+                <div>
+                    <a href="{% url 'slider' %}">
+                        <h2>sliders</h2>
+                    </a>
+                    <a href="{% url 'servicelist' %}">
+                        <h2>Service Lists</h2>
+                    </a>
+                </div>
+            </div>
+            <div style="width:100%;">
+                <div>Main</div>
+                <div><h1>Slider Page</h1></div>
+                <a href="{% url 'servicelist'  %}"> reddd</a>
+                <div class="container">
+                    <form action="{% url 'update_servicelist' datas.id %} " method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="id" id="" value="{{datas.id}}">
+                        <div>
+                            Header
+                            <input type="text" name="header" value="{{datas.header}}">
+                        </div>
+                        <div>
+                            Sub -Header
+                            <input type="text" name="sub_header" value="{{datas.sub_header}}">
+                        </div>
+                        <div>
+                            image_path
+                            <input type="text" name="image_path" value="{{datas.image_path}}">
+                        </div>
+                        <div>
+                            status
+                            <input type="text" name="status" value="{{datas.active}}">
+                        </div>
+                        <div>
+                            <button type="submit">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

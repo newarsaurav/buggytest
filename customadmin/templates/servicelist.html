@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div style="display: flex;justify-content: space-evenly
+        ;">
+            <div style="width: 40%;">
+                <h1>Custom Dashboard Page</h1>
+                <h2>HomePageEdits</h2>
+                <div>
+                    <a href="{% url 'slider' %}">
+                        <h2>sliders</h2>
+                    </a>
+                    <a href="{% url 'servicelist' %}">
+                        <h2>Service Lists</h2>
+                    </a>
+                </div>
+            </div>
+            <div style="width:100%;">
+                <div><h1>Service  Page</h1></div>
+                <div class="container">
+                    <form action="/update_slider" method="POST">
+                        <input type="hidden" name="id" id="" value="{{datas.id}}">
+                        <div>
+                            Title
+                            <input type="text" name="header" value="{{datas.title}}">
+                        </div>
+                        <div>
+                            Sub -Title
+                            <input type="text" name="header" value="{{datas.sub_title}}">
+                        </div>
+                        <div>
+                            service Type
+                            <input type="text" name="header" value="{{datas.service_type}}">
+                        </div>
+                        <div>
+                            status
+                            <input type="text" name="header" value="{{datas.active}}">
+                        </div>
+                        <div>
+                            <button type="submit">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
