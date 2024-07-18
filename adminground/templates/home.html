@@ -69,5 +69,26 @@
                 </div>
         {%endif %}
         {% endfor %}
+        
+       
+        <div>
+            <h1 class="text-center font-bold text-5xl mb-4 m-20"> Service List</h1>
+        </div>
+        <div class="flex flex-wrap -mx-6 justify-center items-center">
+            {%for service in service_lists %}
+            <div class="max-w-sm rounded overflow-hidden shadow-lg m-6">
+                <div class="card relative">
+                    <img class="w-full" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/pasta.jpg" alt="Bologna">
+                    <a href="#" class="absolute top-4 left-4 bg-white text-gray-800 py-1 px-2 text-sm rounded">Technology</a>
+                    <div class="p-4">
+                        <h4 class="font-bold text-xl mb-2">{{service.title}}</h4>
+                        <p class="text-gray-700 mb-4">{{service.sub_title}}</p>
+                        <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">Read Technology</a>
+                    </div>
+                </div>
+            </div>
+            {%endfor %}
+            
+        </div>
     </body>
 </html>

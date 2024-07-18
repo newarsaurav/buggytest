@@ -8,3 +8,12 @@ class Slider(models.Model):
     active = models.BooleanField(default=False)
     def __str__(self):
         return f"id = {self.id} - {self.header} - {self.sub_header} - {self.image_path} - {self.active}"
+    
+class ServiceList(models.Model):
+    title = models.CharField(max_length=50)
+    sub_title = models.CharField(max_length=255)
+    service_type = models.CharField(max_length=20)
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"is_active => {self.active}  || id{self.id} subtitle =>({self.sub_title} serivce_type =>({self.service_type}))"
