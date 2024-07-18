@@ -10,9 +10,4 @@ def test(request):
 
 def home(request):
     sliders = (Slider.objects.values())
-    print(sliders)
-    return render(request , 'home.html' , {'sliders':
-                                           sliders})
-
-# def home(request):
-#     return render(request , 'home.html' , {'name':'mosh'})
+    return render(request , 'home.html' , {'sliders':  sliders})
