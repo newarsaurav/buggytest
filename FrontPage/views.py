@@ -17,12 +17,16 @@ def home(request):
         'front_blog' : data_front_blog,
 
     }
-
-    print('------------------------------')
-    for blog in data_front_blog:
-        print(blog.subtitle)
-        print(blog.title)
-        print(blog.description)
-  
-    print('------------------------------z')
     return render(request, 'index.html' , objs)
+
+
+def blog_page(request , id):
+    data_front_blog = front_blog.objects.filter(id=id).values()
+    all_blog = front_blog.objects.all()
+    data_list = list(data_front_blog)
+    objs = {
+        "id"  : id,
+        "data" : data_list[0],
+        "blogs": all_blog
+    }
+    return render(request , 'blog.html' ,  objs)
